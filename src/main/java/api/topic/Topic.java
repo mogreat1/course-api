@@ -1,4 +1,4 @@
-package topic;
+package api.topic;
 
 
 import javax.persistence.Entity;

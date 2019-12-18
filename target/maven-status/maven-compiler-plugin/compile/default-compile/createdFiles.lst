@@ -1,0 +1,9 @@
+api\topic\TopicController.class
+api\topic\TopicRepository.class
+api\course\CourseController.class
+api\topic\TopicService.class
+api\course\CourseService.class
+api\topic\Topic.class
+api\CourseApiApp.class
+api\course\CourseRepository.class
+api\course\Course.class
