@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 public class Course {
 
     @Id
-    private String id;
+    private int id;
     private String name;
     private String description;
     @ManyToOne
@@ -21,7 +21,7 @@ public class Course {
 
     }
 
-    public Course(String id, String name, String description, String topicId) {
+    public Course(int id, String name, String description, String topicId) {
         super();
         this.id = id;
         this.name = name;
@@ -38,11 +38,11 @@ public class Course {
     }
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

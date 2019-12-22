@@ -1,7 +1,10 @@
 package api.topic;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,28 +23,26 @@ public class TopicService {
     }
 
     public Optional<Topic> getTopic(String id) {
-        //return topics.stream().filter(topic -> topic.getId().equals(id)).findFirst().get();
-        return topicRepository.findById(id);
+        Optional<Topic> topic = topicRepository.findById(id);
+
+        return topic;
     }
 
-    public void addTopic(Topic topic) {
+    public String addTopic(Topic topic) {
         topicRepository.save(topic);
+        return "Success!";
     }
 
-    public void updateTopic(String id, Topic topic) {
+    public String updateTopic(String id, Topic topic) {
         topicRepository.save(topic);
-       /* for (int i = 0; i < topics.size(); i++) {
-            Topic topic1 = topics.get(i);
-            if (topic1.getId().equals(id)) {
-                topics.set(i, topic);
-                return;
-            }
-        }*/
+        return "Success!";
+
     }
 
-    public void deleteTopic(String id) {
+    public String deleteTopic(String id) {
         // topics.removeIf(topic -> topic.getId().equals(id));
         topicRepository.deleteById(id);
+        return "Success!";
 
     }
     //https://github.com/dailylearning/spring-boot-quick-start/blob/master/pom.xml
